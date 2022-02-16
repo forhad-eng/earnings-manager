@@ -18,6 +18,12 @@ function getInput(id) {
         return;
     }
 }
+
+//innerText Setting Function
+function amountField(id, amount) {
+    document.getElementById(id).innerText = amount;
+}
+
 //Calculate Button Event Handler
 document.getElementById('calculate').addEventListener('click', function () {
     const income = getInput('income');
@@ -27,9 +33,9 @@ document.getElementById('calculate').addEventListener('click', function () {
     const totalCost = foodCost + rentCost + clothesCost;
 
     //Total Cost vs Income Validation
-    if (totalCost < income) {
-        document.getElementById('total-expense').innerText = totalCost;
-        document.getElementById('balance').innerText = income - totalCost;
+    if (totalCost <= income) {
+        amountField('total-expense', totalCost);
+        amountField('balance', income - totalCost)
     }
     if (totalCost > income) {
         alert('Sorry! Insufficient Income');
@@ -49,14 +55,14 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     if (!isNaN(savingPercent)) {
         if (savingPercent < 0) {
-            alert('Negative input given!');  //negative input validation...
+            alert('Negative input given! Positive Required.');  //negative input validation...
             return;
         }
         if (savingAmount <= balanceValue) {   //savingAmount vs current balance checking
-            document.getElementById('saving-amount').innerText = savingAmount;
-            document.getElementById('remaining-balance').innerText = balanceValue - savingAmount;
+            amountField('saving-amount', savingAmount);
+            amountField('remaining-balance', balanceValue - savingAmount);
         } else {
-            alert('insufficient Balance!');
+            alert(`Can't be able to save ${savingAmount} as you have left ${balanceValue} only.`);
         }
     } else {
         alert('Number required!')   //string checking...
