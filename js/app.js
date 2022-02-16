@@ -63,6 +63,8 @@ document.getElementById('save-btn').addEventListener('click', function () {
             amountField('remaining-balance', balanceValue - savingAmount);
         } else {
             alert(`Can't be able to save ${savingAmount} as you have left ${balanceValue} only.`);
+            amountField('saving-amount', 0);
+            amountField('remaining-balance', 0);
         }
     } else {
         alert('Number required!')   //string checking...
