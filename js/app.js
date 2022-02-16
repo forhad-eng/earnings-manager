@@ -4,11 +4,14 @@ function getInput(id) {
     const inputValue = parseInt(inputText);
     input.value = '';
 
+    // empty field validation
     if (inputText == '') {
         alert(`${id.toUpperCase()} field is Empty!`);
         return;
     }
+    // String validation
     if (!isNaN(inputValue)) {
+        //Negative number validation
         if (inputValue < 0) {
             alert(`Please insert a Positive value in ${id.toUpperCase()} field`);
         } else {
@@ -19,7 +22,7 @@ function getInput(id) {
         return;
     }
 }
-
+//Calculate Button Event Handler
 document.getElementById('calculate').addEventListener('click', function () {
     const income = getInput('income');
     const foodCost = getInput('food');
@@ -27,7 +30,8 @@ document.getElementById('calculate').addEventListener('click', function () {
     const clothesCost = getInput('clothes');
     const totalCost = foodCost + rentCost + clothesCost;
 
-    if (totalCost >= 0 && income > 0 && totalCost < income) {
+    //Total Cost vs Income Validation
+    if (totalCost < income) {
         document.getElementById('total-expense').innerText = totalCost;
         document.getElementById('balance').innerText = income - totalCost;
     }
