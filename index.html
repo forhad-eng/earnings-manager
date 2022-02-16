@@ -34,7 +34,7 @@
                     <div class="col text-section d-flex flex-column align-items-center p-4 pb-0 mb-2 rounded">
                         <div class="mb-3">
                             <h5 class="fw-bold mb-3 text-center">Income</h5>
-                            Income: <input type="text" id="income" value="10000">
+                            <p>Income: <input type="text" id="income" value="10000"></p>
                         </div>
                         <div class="mb-3 text-center">
                             <h5 class="fw-bold mt-2 mb-3">Expenses</h5>
@@ -42,20 +42,21 @@
                             <p class="ms-3">Rent: <input type="text" id="rent" value="2000"></p>
                             <p>Clothes: <input type="text" id="clothes" value="500"></label></p>
                             <button id="calculate" class="btn btn-primary mb-2 d-block m-auto">Calculate</button>
-                            <h5 id="total-expense" class="fw-bold mt-2 mb-2">Total Expenses 5500</h5>
-                            <h5 id="balance" class="fw-bold mt-2">Balance 4500</h5>
+                            <h5 class="fw-bold mt-2 mb-2">Total Expenses <span id="total-expense">5500</span></h5>
+                            <h5 class="fw-bold mt-2">Balance <span id="balance">4500</span> </h5>
                         </div>
                         <div class="text-center">
                             <p>Save : <input type="text" id="save" class="ms-3 me-3" value="20"> % <button id="save-btn"
                                     class="btn btn-primary ms-3 me-3">Save</button></p>
-                            <h5 id="saving-amount" class="fw-bold mt-2 mb-2">Saving Amount 2000</h5>
-                            <h5 id="remaining-balance" class="fw-bold mt-2">Remaining Balance 2500</h5>
+                            <h5 class="fw-bold mt-2 mb-2">Saving Amount <span id="saving-amount">2000</span> </h5>
+                            <h5 class="fw-bold mt-2">Remaining Balance <span id="remaining-balance">2500</span> </h5>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
+        <script src="js/app.js"></script>
     </body>
 
 </html>
